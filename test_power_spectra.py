@@ -36,7 +36,10 @@ class PowerSpectraTests(unittest.TestCase):
         Uses a multiscale consulting file to determine surface roughness.
         :return:
         """
-        power_spectra.PowerSpectra.from_multiscale_file('http://www.multiscaleconsulting.com/downloads/ROADTYPE.NX.NY.a.prefz.Height.data.1x.2y.3h')
+        ps = power_spectra.PowerSpectra.from_multiscale_file(
+            'http://www.multiscaleconsulting.com/downloads/ROADTYPE.NX.NY.a.prefz.Height.data.1x.2y.3h')
+        ps.plot_surface()
+        ps.imshow_surface()
         assert True
 
 if __name__ == "__main__":
